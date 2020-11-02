@@ -1,10 +1,11 @@
 import React from 'react';
+import '../styles/navbar.css'
 
 const Navbar = () => {
     return (
-        <div>
-            <nav>
-                <ul>
+        <div id = "navWrapper">
+            <nav className = 'navbar'>
+                <ul className = 'nav-ul'>
                     <li>
                         HOME
                     </li>
