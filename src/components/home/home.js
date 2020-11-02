@@ -16,20 +16,17 @@ function Home() {
       <h2>{bookData.error}</h2>
     ): (
       <div>
-        <h2 style = {{backgroundColor: 'yellow'}}>Books List</h2>
-        <div>
-          <ul>
-            {bookData.books.items? bookData.books.items
-            .map((item) => <li key={item.id}>
-            <BookCard
-             thumbnail = {item.volumeInfo.imageLinks.thumbnail} 
-             bookTitle = {item.volumeInfo.title}
-             author = {item.volumeInfo.authors[0]}
-            /></li>)
-            : null 
-            }
-          </ul>
-        </div>
+        <ul>
+          {bookData.books.items? bookData.books.items
+           .map((item) => <li key={item.id}>
+           <BookCard
+           thumbnail = {item.volumeInfo.imageLinks.thumbnail} 
+           bookTitle = {item.volumeInfo.title}
+           author = {item.volumeInfo.authors[0]}
+          /></li>)
+          : null 
+          }
+        </ul>
       </div>
     )
 };
