@@ -7,13 +7,13 @@ function CardButtons({id}) {
     const favorites = useSelector(state => state.favorites);
 
     //add to favorites 
-    const addBtn = (e) => {
-        dispatch(addToFavorites(e.target.value));
+    const addBtn = () => {
+        dispatch(addToFavorites(id));
     }
 
     // remove from favorites
-    const removeBtn = (e) => {
-        dispatch(removeFromFavorites(e.target.value));
+    const removeBtn = () => {
+        dispatch(removeFromFavorites(id));
     }
     return (
         <div>
