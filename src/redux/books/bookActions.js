@@ -2,7 +2,9 @@ import axios from 'axios'
 import {
     FETCH_BOOKS_REQUEST,
     FETCH_BOOKS_SUCCESS,
-    FETCH_BOOKS_FAILURE
+    FETCH_BOOKS_FAILURE,
+    ADD_TO_FAVORITES,
+    REMOVE_FROM_FAVORITES
 } from './bookTypes'
 
 export const fetchBooksRequest = () => {
@@ -23,6 +25,20 @@ export const fetchBooksFailure = error => {
       type: FETCH_BOOKS_FAILURE,
       payload: error
     }
+};
+
+export const addToFavorites = id => {
+    return {
+      type: ADD_TO_FAVORITES,
+      payload: id
+    }
+};
+
+export const removeFromFavorites = id => {
+  return {
+    type: REMOVE_FROM_FAVORITES,
+    payload: id
+  }
 };
 
 export const fetchBooks = () => {

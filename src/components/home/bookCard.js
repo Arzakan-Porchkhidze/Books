@@ -1,6 +1,7 @@
 import React from 'react';
+import CardButtons from './cardButtons'
 
-const BookCard = ({thumbnail, bookTitle, author}) => {
+const BookCard = ({thumbnail, bookTitle, author, id}) => {
     return (
         <div>
             <div className="card">
@@ -8,7 +9,7 @@ const BookCard = ({thumbnail, bookTitle, author}) => {
                 <div className="card-body">
                     <h5 className="card-title">{bookTitle}</h5>
                     <p className="card-text">{author}</p>
-                    <button className="btn btn-primary">Go somewhere</button>
+                    <CardButtons id = {id} />
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import './App.css'
-import Home from './components/home/home'
 import { Provider } from 'react-redux'
+import Home from './components/home/home'
+import Favorites from './components/favorites/favorites'
 import store from './redux/store'
 import Navbar from './components/navbar'
 
@@ -12,6 +13,7 @@ function App() {
           <Navbar />
         </header>
         <Home />
+        <Favorites />
       </div>
     </Provider>
   );

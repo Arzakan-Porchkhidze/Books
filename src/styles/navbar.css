@@ -2,8 +2,6 @@
 
 #navWrapper {
     position: fixed;
-    display: flex;
-    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
@@ -16,15 +14,24 @@
     box-shadow:0px 5px 5px black;
 }
 
+.navbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .nav-ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    height: 100%;
     margin: 0;
     color: rgb(0, 52, 112);
 }
 
 .nav-ul > li {
+    display: flex;
+    align-items: center;
     list-style: none;
     cursor: pointer;
     height: 100%;

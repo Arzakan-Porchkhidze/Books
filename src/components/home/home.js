@@ -20,6 +20,7 @@ function Home() {
           {bookData.books.items? bookData.books.items
            .map((item) => <li key={item.id}>
            <BookCard
+           id = {item.id}
            thumbnail = {item.volumeInfo.imageLinks.thumbnail} 
            bookTitle = {item.volumeInfo.title}
            author = {item.volumeInfo.authors[0]}
