@@ -5,22 +5,17 @@ import BookCard from '../home/bookCard'
 
 function Favorites() {
     const favorites = useSelector(state => state.favorites)
-    const booksData = useSelector(state => state.books);
-
-    const favBooks = booksData.items?
-     booksData.items.filter(book => favorites.includes(book.id))
-     : null;
 
     return (
         <div>
-            {favBooks ? (
+            {favorites.length > 0 ? (
                 <ul>
-                    { favBooks.map(book => <li>
+                    { favorites.map(book => <li key = {book.id}>
                         <BookCard
                             id = {book.id}
                             thumbnail = {book.volumeInfo.imageLinks.thumbnail} 
                             bookTitle = {book.volumeInfo.title}
-                            author = {book.volumeInfo.authors[0]}
+                            author = {book.volumeInfo.authors}
                         />
                     </li>
                     )}

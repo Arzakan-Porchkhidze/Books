@@ -23,7 +23,7 @@ function Home() {
            id = {item.id}
            thumbnail = {item.volumeInfo.imageLinks.thumbnail} 
            bookTitle = {item.volumeInfo.title}
-           author = {item.volumeInfo.authors[0]}
+           author = {item.volumeInfo.authors}
           /></li>)
           : null 
           }

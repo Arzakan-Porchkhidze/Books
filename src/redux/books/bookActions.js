@@ -27,17 +27,17 @@ export const fetchBooksFailure = error => {
     }
 };
 
-export const addToFavorites = id => {
+export const addToFavorites = favBook => {
     return {
       type: ADD_TO_FAVORITES,
-      payload: id
+      payload: favBook
     }
 };
 
-export const removeFromFavorites = id => {
+export const removeFromFavorites = favBook => {
   return {
     type: REMOVE_FROM_FAVORITES,
-    payload: id
+    payload: favBook
   }
 };
 
