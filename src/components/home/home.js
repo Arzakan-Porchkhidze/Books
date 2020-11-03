@@ -1,14 +1,7 @@
-import React, {useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { fetchBooks } from '../../redux/index'
+import React from 'react'
 import BookCard from './bookCard'
 
-function Home() {
-  const bookData = useSelector(state => state);
-  const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchBooks());
-    }, []);
+function Home({bookData}) {
 
     return bookData.loading ? (
       <h2>Loading</h2>
