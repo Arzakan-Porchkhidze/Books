@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import {addToFavorites, removeFromFavorites} from '../../redux/index'
+import {Link} from 'react-router-dom'
 
 function CardButtons({id}) {
     const dispatch = useDispatch();
@@ -35,6 +36,11 @@ function CardButtons({id}) {
             >remove from favorites
             </button>
             )}
+            <button>
+            <Link to = {`/details/${id}`} >
+                read mode
+            </Link>
+            </button>
         </div>
     );
 }

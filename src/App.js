@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchBooks } from './redux/index'
 import Home from './components/home/home'
 import Favorites from './components/favorites/favorites'
+import Details  from './components/details/details'
 import Navbar from './components/navbar'
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
   const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchBooks());
-    }, []);
+    }, [dispatch]);
 
   return (
     <Router>
@@ -29,6 +30,7 @@ function App() {
              exact render={(props) => <Home {...props} bookData={bookData}/>}
             />
             <Route path='/favorites' exact component = {Favorites} />
+            <Route path='/details/:id' exact render={(props) => <Details {...props} />}/>
           </Switch>
         </div>
     </Router>

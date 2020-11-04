@@ -47,7 +47,7 @@ export const fetchBooks = () => {
         axios
         .get('https://www.googleapis.com/books/v1/volumes?q=subject:comedy&key=AIzaSyDuIPd1eaJXwmOZXm_UDsz4GL6S88VdBYk')
         .then(response => {
-          console.log(response.data)
+          //console.log(response.data)
           const books = response.data
           dispatch(fetchBooksSuccess(books));
         })
