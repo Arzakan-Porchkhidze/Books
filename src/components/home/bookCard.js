@@ -1,18 +1,16 @@
 import React from 'react';
-import CardButtons from './cardButtons'
+import CardButtons from './CardButtons'
 
 const BookCard = ({thumbnail, bookTitle, author, id}) => {
     return (
-        <div>
             <div className="card">
-                <img src={thumbnail} className="card-img-top" alt="cover img"/>
+                <img src={thumbnail} className="card-img" alt="cover img"/>
                 <div className="card-body">
-                    <h3 className="card-title">Title: {bookTitle}</h3>
-                    <p className="card-text">Author: {author}</p>
+                    <h4 className="card-title">{bookTitle}</h4>
+                    <div className="card-text">{author.map((item,i) => <p key={i}>{item}</p>)}</div>
                     <CardButtons id = {id} />
                 </div>
             </div>
-        </div>
     );
 };
 

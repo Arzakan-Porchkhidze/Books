@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import '../../styles/Details.css'
 
 function Details({match}) {
     const [book, setBook] = useState();
@@ -15,19 +16,45 @@ function Details({match}) {
         })
     }, [match.params.id]);
     return (
-        <div>
-        { book ? (<div>
-            <img src={book.volumeInfo.imageLinks.thumbnail} alt='book cover' />
-            <h2>{book.volumeInfo.title}</h2>
-            <p>{book.volumeInfo.authors[0]}</p>
-            <p>Category: {book.volumeInfo.categories[0]}</p>
-              <h3>Description</h3>
-              <p>{book.volumeInfo.description}</p>
-              <h4>Publisher</h4>
-              <p>{book.volumeInfo.publisher}</p>
-              <h5>Publish Date</h5>
-              <p>{book.volumeInfo.publishedDate}</p>
-            </div>): null}
+        <div className='details'>
+        { book ? (<div className='details-info'>
+            <div className='img-div'>
+                <img className='book-img' src={book.volumeInfo.imageLinks.thumbnail} alt='book cover' />
+            </div>
+            <div className='details-text'>
+                <div className='title'>
+                    <h2>{book.volumeInfo.title}</h2>
+                </div>
+                <div className='authors'>
+                    <p>By:</p>
+                    <div className='author-name'>
+                        {book.volumeInfo.authors.map((item,i) => <p key={i}>{item}</p>)}
+                    </div>
+                </div>
+                <div className='description'>
+                    <h3>Description:</h3>
+                    <p>{book.volumeInfo.description}</p>
+                </div>
+                <div className='workMeta-details'>
+                    <div className='workMeta-detailsRow'>
+                        <span className='workMeta-detail'>Publisher:</span>
+                        <span className='workMeta-detail'>{book.volumeInfo.publisher}</span>
+                    </div>
+                    <div className='workMeta-detailsRow'>
+                        <span className='workMeta-detail'>Publish Date:</span>
+                        <span className='workMeta-detail'>{book.volumeInfo.publishedDate}</span>
+                    </div>
+                    <div className='workMeta-detailsRow'>
+                        <span className='workMeta-detail'>Language:</span>
+                        <span className='workMeta-detail'>{book.volumeInfo.language}</span>
+                    </div>
+                    <div className='workMeta-detailsRow'>
+                        <span className='workMeta-detail'>Length:</span>
+                        <span className='workMeta-detail'>{book.volumeInfo.pageCount} Pages</span>
+                    </div>
+                </div>
+            </div>
+        </div>): null}
         </div>
     );
 }

@@ -1,0 +1,29 @@
+.booksContainer {
+    top: 0;
+    left: 0;
+    margin-top: 100px;
+    width: 80%;
+}
+.bookList  {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 40px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bookList > li {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    border: 3px solid white;
+    border-radius: 15px;
+    box-shadow: 5px  8px 10px #888888;
+}
+
+.bookList > li:hover {
+    box-shadow: 0px 0px 8px 8px #888888;
+    transform: scale(1.05);
+}

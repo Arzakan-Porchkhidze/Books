@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import '../../styles/BookCard.css'
 import { useSelector, useDispatch } from 'react-redux'
 import {addToFavorites, removeFromFavorites} from '../../redux/index'
 import {Link} from 'react-router-dom'
@@ -22,23 +23,23 @@ function CardButtons({id}) {
         dispatch(removeFromFavorites(favBook));
     }
     return (
-        <div>
+        <div  className = 'button_wrapper'>
             {!favBooksId.includes(id) ? (
             <button
                 onClick={addBtn}
                 className='addBtn'
-            >add to favorites
+            ><i className="fa fa-star-o"></i>
             </button>
             ) : (
             <button
                 onClick={removeBtn}
                 className='removeBtn'
-            >remove from favorites
+            ><i className="fa fa-star"></i>
             </button>
             )}
-            <button>
+            <button className='details_button'>
             <Link to = {`/details/${id}`} >
-                read mode
+                read more
             </Link>
             </button>
         </div>

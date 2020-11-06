@@ -7,10 +7,11 @@ import {
 } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchBooks } from './redux/index'
-import Home from './components/home/home'
-import Favorites from './components/favorites/favorites'
-import Details  from './components/details/details'
-import Navbar from './components/navbar'
+import Home from './components/home/Home'
+import Favorites from './components/favorites/Favorites'
+import Details  from './components/details/Details'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   const bookData = useSelector(state => state);
@@ -32,6 +33,9 @@ function App() {
             <Route path='/favorites' exact component = {Favorites} />
             <Route path='/details/:id' exact render={(props) => <Details {...props} />}/>
           </Switch>
+          <footer>
+            <Footer />
+          </footer>
         </div>
     </Router>
   );

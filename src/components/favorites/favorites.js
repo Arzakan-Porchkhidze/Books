@@ -1,15 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
-import BookCard from '../home/bookCard'
+import BookCard from '../home/BookCard'
+import '../../styles/Favorites.css'
 
 
 function Favorites() {
     const favorites = useSelector(state => state.favorites)
 
     return (
-        <div>
+        <div className='favBooks-container'>
             {favorites.length > 0 ? (
-                <ul>
+                <ul className='fav-list'>
                     { favorites.map(book => <li key = {book.id}>
                         <BookCard
                             id = {book.id}

@@ -1,0 +1,49 @@
+.details {
+    width: 60%;
+    margin-top: 100px;
+}
+.details-info{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.img-div {
+    margin-right: 50px;
+}
+.book-img {
+    width: 10rem;
+    max-height: 400px;
+}
+.title > h2 {
+    margin: 0;
+    padding: 0;
+}
+.authors {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.authors > p {
+    margin-right: 10px;
+    font-weight: 600;
+}
+.workMeta-details {
+    max-width: 600px;
+    display: table;
+    text-align: left;
+}
+.workMeta-detailsRow {
+    display: block;
+}
+
+.workMeta-detailsRow .workMeta-detail:first-of-type {
+    font-weight: 400;
+    white-space: nowrap;
+}
+.WorkMeta-detail {
+    display: table-cell;
+}
+.WorkMeta-details .WorkMeta-detail:last-of-type {
+    margin-left: .2rem;
+    white-space: normal;
+}
