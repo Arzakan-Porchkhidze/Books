@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import FavButton from './FavButton'
 import '../../styles/Details.css'
 
 function Details({match}) {
@@ -55,6 +56,7 @@ function Details({match}) {
                 </div>
             </div>
         </div>): null}
+        <FavButton id={match.params.id} />
         </div>
     );
 }

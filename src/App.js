@@ -1,10 +1,9 @@
-import React, {useEffect} from "react";
+import React, {useEffect} from "react"
 import './App.css'
 import {
-  BrowserRouter as Router,
   Route,
   Switch,
-} from 'react-router-dom';
+} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchBooks } from './redux/index'
 import Home from './components/home/Home'
@@ -21,7 +20,6 @@ function App() {
     }, [dispatch]);
 
   return (
-    <Router>
         <div className="App">
           <header>
             <Navbar />
@@ -31,13 +29,12 @@ function App() {
              exact render={(props) => <Home {...props} bookData={bookData}/>}
             />
             <Route path='/favorites' exact component = {Favorites} />
-            <Route path='/details/:id' exact render={(props) => <Details {...props} />}/>
+            <Route path='/details/:id' exact component = {Details}/>
           </Switch>
           <footer>
             <Footer />
           </footer>
         </div>
-    </Router>
   );
 };
 
