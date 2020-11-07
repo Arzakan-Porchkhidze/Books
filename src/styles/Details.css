@@ -11,8 +11,26 @@
     border-radius: 20px;
     box-shadow: 10px 10px 20px 5px #888888;
 }
-.img-div {
+.img-and-favButton-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-right: 50px;
+}
+.details-addBtn, .details-removeBtn {
+    cursor: pointer;
+    outline:none;
+    border: none;
+    background-color: white;
+    border-radius: 15%;
+}
+.details-addBtn > i {
+    font-size: 50px;
+    color: #ffcc14;
+}
+.details-removeBtn > i {
+    font-size: 50px;
+    color:#ffcc14;
 }
 .book-img {
     width: 10rem;

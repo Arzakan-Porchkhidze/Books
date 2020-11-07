@@ -19,8 +19,9 @@ function Details({match}) {
     return (
         <div className='details'>
         { book ? (<div className='details-info'>
-            <div className='img-div'>
+            <div className='img-and-favButton-div'>
                 <img className='book-img' src={book.volumeInfo.imageLinks.thumbnail} alt='book cover' />
+                <FavButton id={match.params.id} />
             </div>
             <div className='details-text'>
                 <div className='title'>
@@ -56,7 +57,6 @@ function Details({match}) {
                 </div>
             </div>
         </div>): null}
-        <FavButton id={match.params.id} />
         </div>
     );
 }

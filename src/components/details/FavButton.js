@@ -6,10 +6,12 @@ function FavButton({id}) {
     const dispatch = useDispatch();
     const favorites = useSelector( state => state.favorites);
     const bookData = useSelector( state => state.books.items);
-    console.log(favorites)
-    console.log(bookData)
+    let favBook;
 
-    const favBook = bookData.find(book => book.id === id); //to select book by id
+    if(bookData){
+        favBook = bookData.find(book => book.id === id); //to select book by id
+    }
+
 
     const favBooksId = favorites.map(book => book.id); // to check all favBooks id
 
@@ -24,7 +26,7 @@ function FavButton({id}) {
     }
 
     return (
-        <div>
+        <div className='fav-button'>
             {!favBooksId.includes(id) ? (
             <button
                 onClick={addBtn}
