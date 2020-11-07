@@ -27,7 +27,7 @@ function Details({match}) {
                 </div>
                 <div className='authors'>
                     <p>By:</p>
-                    <div className='author-name'>
+                    <div className='author-names'>
                         {book.volumeInfo.authors.map((item,i) => <p key={i}>{item}</p>)}
                     </div>
                 </div>
