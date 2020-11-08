@@ -26,7 +26,7 @@ function Home({bookData}) {
       </div>
     ): bookData.error ? (
       <div style={errorStyle}>
-        <h2>{bookData.error}</h2>
+        <h2>Something went wrong...</h2>
       </div>
       
     ): (

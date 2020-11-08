@@ -15,9 +15,11 @@ import Footer from './components/Footer'
 function App() {
   const bookData = useSelector(state => state);
   const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchBooks());
-    }, [dispatch]);
+  const url = 'https://www.googleapis.com/books/v1/volumes?q=subject:Detective&key=AIzaSyDuIPd1eaJXwmOZXm_UDsz4GL6S88VdBYk';
+
+  useEffect(() => {
+      dispatch(fetchBooks(url));
+  }, [dispatch]);
 
   return (
         <div className="App">
